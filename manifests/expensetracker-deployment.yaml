@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expensetracker-api-deployment
+  labels:
+    app: expensetracker-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expensetracker-api
+  template:
+    metadata:
+      labels:
+        app: expensetracker-api
+    spec:
+      containers:
+        - name: expensetracker-api
+          image: kalyankumar21/expensetracker-api:3.0
+          env:
+            - name: DBURL
+              value: mongodb://mongodb-0.mongodb,mongodb-1.mongodb,mongodb-2.mongodb:27017/Expense-Tracker-db?replicaSet=rs0
+          ports:
+            - containerPort: 3001
