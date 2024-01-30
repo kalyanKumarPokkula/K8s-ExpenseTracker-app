@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: expensetracker-ui-deployment
+  # namespace: cloudchamp
   labels:
     app: expensetracker-ui
 spec:
@@ -19,6 +20,6 @@ spec:
           image: kalyankumar21/expensetracker-ui:3.0
           env:
             - name: REACT_APP_API_URL
-              value: http://localhost:30007
+              value: http://a1e93142c65454637b953c36631e1eab-1966761665.ap-south-1.elb.amazonaws.com
           ports:
             - containerPort: 3000

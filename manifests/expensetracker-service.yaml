@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: expensetracker-api-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: expensetracker-api
   ports:
-    - port: 3001
+    - protocol: TCP
+      port: 80
       targetPort: 3001
-      nodePort: 30007

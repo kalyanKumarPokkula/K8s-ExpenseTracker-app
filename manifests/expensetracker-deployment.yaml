@@ -19,6 +19,6 @@ spec:
           image: kalyankumar21/expensetracker-api:3.0
           env:
             - name: DBURL
-              value: mongodb://mongodb-0.mongodb,mongodb-1.mongodb,mongodb-2.mongodb:27017/Expense-Tracker-db?replicaSet=rs0
+              value: mongodb://mongo-0.mongo,mongo-1.mongo,mongo-2.mongo:27017/Expense-Tracker-db?replicaSet=rs0
           ports:
             - containerPort: 3001
